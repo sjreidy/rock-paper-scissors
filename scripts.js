@@ -1,8 +1,10 @@
+//Computer chooses random option
 function getComputerChoice(){
     var rockPaperScissors = ["rock", "paper", "scissors"];
     return rockPaperScissors[Math.floor(Math.random() * rockPaperScissors.length)];
 }
 
+//Compare player's choice and computer's choice
 function playRound(playerSelection, computerSelection){
     if (playerSelection === computerSelection) {
         return "Tie Game!"
@@ -17,6 +19,7 @@ function playRound(playerSelection, computerSelection){
     }
 }
 
+//Get player's choice and play five rounds
 function playGame(){
     for(var i = 0; i < 5; i++){
         var computerSelection = getComputerChoice();
