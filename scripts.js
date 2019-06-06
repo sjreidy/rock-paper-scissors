@@ -1,9 +1,9 @@
-function computerPlay(){
-    var rps = ["rock", "paper", "scissors"];
-    return rps[Math.floor(Math.random() * rps.length)];
+function getComputerChoice(){
+    var rockPaperScissors = ["rock", "paper", "scissors"];
+    return rockPaperScissors[Math.floor(Math.random() * rockPaperScissors.length)];
 }
 
-function oneRound(playerSelection, computerSelection){
+function playRound(playerSelection, computerSelection){
     if (playerSelection === computerSelection) {
         return "Tie Game!"
     } else if (playerSelection === "rock" && computerSelection === "paper") {
@@ -17,16 +17,16 @@ function oneRound(playerSelection, computerSelection){
     }
 }
 
-function fiveRounds(){
+function playGame(){
     for(var i = 0; i < 5; i++){
-        var computerSelection = computerPlay();
+        var computerSelection = getComputerChoice();
         var promptSelection = prompt("Rock, paper, or scissors");
         var playerSelection = promptSelection.toLowerCase();
-        console.log(oneRound(playerSelection, computerSelection));
+        console.log(playRound(playerSelection, computerSelection));
     }
 }
 
-fiveRounds();
+playGame();
 
  
 
