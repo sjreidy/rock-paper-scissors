@@ -1,10 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Rock, Paper, Scissors</title>
+    <meta charset="UTF-8">
+    <title>👊 🤚 ✌️</title>
+
+    <!--Stylesheet and Fonts-->
+    <link rel = "stylesheet" type = "text/css" href = "styles.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap" 
+    rel="stylesheet"> 
 </head>
+
 <body>
+    <!--Center everything-->
+    <div class = "center">
+        <!--Buttons-->
+            <button class="btn" id="rock"><div class="btn-label">Rock</div>👊</button>
+            <button class ="btn" id="paper"><div class="btn-label">Paper</div>🤚</button>
+            <button class = "btn" id="scissors"><div class= "btn-label">Scissors</div>✌️</button>
+        <!--Scoreboard-->
+        <div class= "scoreboard">
+            <p>Your Score</p>
+            <p>My Score</p>
+            <p id="playerScore"></p>
+            <p id="computerScore"></p>
+            <p></p>
+            <p>I chose</p>
+            <p></p>
+            <p id="computerChoice"></p>
+        </div>
+    </div>
+
     <script src="scripts.js"></script>
 </body>
 </html>

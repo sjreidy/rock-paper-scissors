@@ -1,41 +1,66 @@
-//Computer chooses random option
+//Set Initial Scores and Display Them
+var playerScore = 0;
+var computerScore = 0;
+document.getElementById('computerScore').textContent = computerScore;
+document.getElementById('playerScore').textContent = playerScore;
+
+//Put all buttons on the page into the buttons constant
+const buttons = document.querySelectorAll('button');
+
+//Computer Randomly Generates Rock, Paper, or Scissors
 function getComputerChoice(){
     var rockPaperScissors = ["rock", "paper", "scissors"];
-    return rockPaperScissors[Math.floor(Math.random() * rockPaperScissors.length)];
+    return computerSelection = rockPaperScissors[Math.floor(Math.random() * rockPaperScissors.length)];
 }
 
-//Compare player's choice and computer's choice
+//A single round 
 function playRound(playerSelection, computerSelection){
     if (playerSelection === computerSelection) {
         return "Tie Game!"
     } else if (playerSelection === "rock" && computerSelection === "paper") {
+        computerScore = computerScore + 1;
+        scoreCheck(playerScore, computerScore);
+        document.getElementById('computerScore').textContent = computerScore;
         return "You Lose!";
     } else if (playerSelection === "paper" && computerSelection === "scissors") {
+        computerScore = computerScore + 1;
+        scoreCheck(playerScore, computerScore);
+        document.getElementById('computerScore').textContent = computerScore;
         return "You Lose!";
     } else if (playerSelection === "scissors" && computerSelection === "rock") {
+        computerScore = computerScore + 1;
+        scoreCheck(playerScore, computerScore);
+        document.getElementById('computerScore').textContent = computerScore;
         return "You Lose!";
     } else {
+        playerScore= playerScore + 1 ;
+        scoreCheck(playerScore, computerScore);
+        document.getElementById('playerScore').textContent = playerScore;
         return "You Win!";
     }
 }
 
-//Get player's choice and play five rounds
-function playGame(){
-    for(var i = 0; i < 5; i++){
+
+//Use buttons to make player choice and start game 
+buttons.forEach((button) => {
+    button.addEventListener('click', (e) => {
+        var playerSelection = button.id;
         var computerSelection = getComputerChoice();
-        var promptSelection = prompt("Rock, paper, or scissors");
-        var playerSelection = promptSelection.toLowerCase();
-        console.log(playRound(playerSelection, computerSelection));
+        document.getElementById('computerChoice').textContent = computerSelection;
+        playRound(playerSelection, computerSelection);
+    });
+});
+
+//Check if anyone has won yet
+function scoreCheck(playerScore, computerScore){
+    if(playerScore == 3){
+        alert("You Won!");
+        location.reload();
+    } else if(computerScore == 3){
+        alert("You Lost!")
+        location.reload();
     }
 }
-
-playGame();
-
- 
-
-
-
-
 
 
 

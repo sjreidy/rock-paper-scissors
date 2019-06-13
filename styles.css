@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.center {
+    padding-top: 5em;
+    text-align: center;
+}
+
+.btn {
+    font-size: 225px;
+    background-color: white;
+    border: none;
+    padding-left: 45px;
+}
+
+.btn-label, .scoreboard {
+    font-size: 40px;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: bold;
+}
+
+p {
+    padding-top: 60px;
+    float: left;
+    width: 50%;
+    text-decoration: underline;
+}
+
+#playerScore, #computerScore, #computerChoice, .noDecoration {
+    padding-top: 20px;
+    text-decoration: none;
+}
+
